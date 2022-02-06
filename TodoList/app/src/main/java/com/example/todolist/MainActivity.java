@@ -79,15 +79,45 @@ public class MainActivity extends AppCompatActivity {
 
     // Borrar tareas
     public void borrarTarea(View view) {
-        // Obtenemos el parent
+        // Obtención del parent
         View parent = (View) view.getParent();
-        // Obtenemos el objeto
+        // Obtención el objeto
         TextView tareaTextView = (TextView) parent.findViewById(R.id.task_title);
-        // Obtenemos el texto
+        // Obtención el texto
         String tarea = tareaTextView.getText().toString();
+        // Llamada al método para borrar tarea
         controladorDB.borrarTarea(tarea);
+        // Mensaje de información al usuario
         Toast toast = Toast.makeText(this, "Tarea finalizada", Toast.LENGTH_LONG);
         toast.show();
         actualizarUI();
+    }
+
+    // Actualizar tarea
+    public void updateTarea(View view){
+
+        // Obtención del parent
+        View parent = (View) view.getParent();
+        // Obtención el objeto
+        TextView tareaTextView = (TextView) parent.findViewById(R.id.task_title);
+        // Obtención el texto
+        String oldTask = tareaTextView.getText().toString();
+        EditText cajaDialogo = new EditText(this);
+        Toast toast = Toast.makeText(this, "Tarea modificada", Toast.LENGTH_LONG);
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setTitle("Modificar tarea")
+                .setMessage("Modifica la tarea")
+                .setView(cajaDialogo)
+                .setPositiveButton("Modificar tarea", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        controladorDB.updateTarea(cajaDialogo.getText().toString(), usuario, oldTask);
+                        actualizarUI();
+                        toast.show();
+                    }
+                })
+                .setNegativeButton("Cancelar", null)
+                .create();
+        dialog.show();
     }
 }

@@ -6,24 +6,37 @@
 
     <TextView
         android:id="@+id/task_title"
-        android:layout_width="239dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@id/task_delete"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginEnd="38dp"
-        android:layout_toStartOf="@+id/task_delete"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@+id/task_update"
+        android:fontFamily="@font/roboto_medium"
         android:text="TextView"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/task_delete"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/done"
         android:drawableLeft="@drawable/ic_task_done"
-        android:onClick="borrarTarea"/>
+        android:backgroundTint="@color/light_blue"
+        android:onClick="borrarTarea" />
+
+    <Button
+        android:id="@+id/task_update"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/task_delete"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/task_delete"
+        android:drawableLeft="@drawable/ic_update_task"
+        android:backgroundTint="@color/light_blue"
+        android:onClick="updateTarea"/>
 
 </RelativeLayout>

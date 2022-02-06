@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String usuarioString = usuario.getText().toString();
         String passString = pass.getText().toString();
 
-        // Pasamos a MainActivity
+        // Paso a MainActivity
         Intent intentLogin = new Intent(this, MainActivity.class);
 
         // Con el if controlamos el origen de la pulsación
@@ -47,13 +47,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             // Lógica del botón de login
             if (controladorDB.loginUsuario(usuarioString, passString)) {
-
+                // Mensaje de login correcto
                 Toast toast = Toast.makeText(this, "Usuario / Contraseña correcto", Toast.LENGTH_LONG);
                 toast.show();
+                // Cambio de activity y paso de información
                 intentLogin.putExtra("usuario", usuarioString);
                 startActivity(intentLogin);
 
             } else {
+                // Mensaje de error en el login
                 Toast toast = Toast.makeText(this, "Usuario / Contraseña erróneo", Toast.LENGTH_LONG);
                 toast.show();
             }
@@ -61,19 +63,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // Lógica del botón crear usuario
         } else {
 
-            // Creamos el usuario y su contraseña en la base de datos
-            if (controladorDB.crearUsuario(usuarioString, passString)) {
+            if (!usuarioString.isEmpty() && !passString.isEmpty()) {
 
-                Toast toast = Toast.makeText(this, "Usuario creado", Toast.LENGTH_LONG);
-                toast.show();
+                // Validación para la creación en la base de datos de usuario / contraseña
+                if (controladorDB.crearUsuario(usuarioString, passString)) {
+                    // Mensaje de confirmación de creación de usuario / contraseña
+                    Toast toast = Toast.makeText(this, "Usuario creado", Toast.LENGTH_LONG);
+                    toast.show();
+                    // Cambio de activity y paso de información
+                    intentLogin.putExtra("usuario", usuarioString);
+                    startActivity(intentLogin);
 
-                intentLogin.putExtra("usuario", usuarioString);
-                startActivity(intentLogin);
+                    // Aviso de existencia en la base de datos del usuario
+                } else {
+                    usuario.setError("Usuario ya existe");
+                    usuario.requestFocus();
+                }
 
-            // Si ya existe el usuario lo informamos
-            } else {
-                Toast toast = Toast.makeText(this, "Ya existe ese usuario", Toast.LENGTH_LONG);
-                toast.show();
+            } else if (usuarioString.isEmpty()){
+                usuario.setError("Usuario vacío");
+
+            } else if (passString.isEmpty()){
+                pass.setError("Password vacía");
+                pass.requestFocus();
             }
         }
     }

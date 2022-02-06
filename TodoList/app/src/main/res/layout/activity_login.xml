@@ -11,28 +11,17 @@
         style="@style/Title"
         android:layout_marginTop="80dp"
         android:text="@string/mis_tareas"
-        android:textColor="@color/black" />
+        android:textColor="@color/light_blue" />
 
-    <TextView
-        android:id="@+id/splashSubtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/splashTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/gunplay"
-        android:text="@string/app"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/splashImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_to_do_list"
-        android:layout_below="@id/splashSubtitle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/splashTitle"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"/>
+        android:src="@drawable/ic_candado"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -51,8 +40,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/userBox"
+                android:background="@color/white"
                 style="@style/TextInputEditText"
-                android:hint="Usuario">
+                android:hint="@string/usuario"
+                >
 
                 <requestFocus />
             </com.google.android.material.textfield.TextInputEditText>
@@ -64,8 +55,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passBox"
                 style="@style/TextInputEditText"
-                android:hint="Password"
-                android:inputType="textPassword" />
+                android:background="@color/white"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColorHint="#616161" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,29 +69,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="40dp"
-        android:text="Login"
+        android:layout_marginRight="80dp"
+        android:backgroundTint="@color/light_blue"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="15sp"
         app:cornerRadius="10dp"
+        app:icon="@drawable/ic_user_login"
         app:rippleColor="@color/white"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp" />
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/createUserButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginButton"
+        android:layout_marginLeft="80dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_centerHorizontal="true"
-        android:text="Crear usuario"
+        android:layout_marginRight="80dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/crear_usuario"
+        android:textAlignment="center"
+        android:textColor="@color/light_blue"
+        android:textSize="15sp"
         app:cornerRadius="10dp"
         app:rippleColor="@color/white"
-        app:strokeColor="@color/black"
-        app:strokeWidth="1dp" />
+        app:strokeColor="@color/light_blue"
+        app:strokeWidth="3dp" />
 
 </RelativeLayout>

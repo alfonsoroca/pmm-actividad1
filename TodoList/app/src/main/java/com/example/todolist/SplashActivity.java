@@ -21,18 +21,23 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         getSupportActionBar().hide();
 
         // Asignar animaciones a etiquetas
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.splash_animation);
+        // Animación izquierda
+        Animation leftAnimation = AnimationUtils.loadAnimation(this, R.anim.splash_left_animation);
         TextView textViewTitle = findViewById(R.id.splashTitle);
-        textViewTitle.startAnimation(animation);
-        animation.setAnimationListener(this);
+        textViewTitle.startAnimation(leftAnimation);
+        leftAnimation.setAnimationListener(this);
 
+        // Animación derecha
+        Animation rightAnimation = AnimationUtils.loadAnimation(this, R.anim.splash_right_animation);
         TextView textViewSubtitle = findViewById(R.id.splashSubtitle);
-        textViewSubtitle.startAnimation(animation);
-        animation.setAnimationListener(this);
+        textViewSubtitle.startAnimation(rightAnimation);
+        rightAnimation.setAnimationListener(this);
 
+        // Animación inferior
+        Animation bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.splash_bottom_animation);
         ImageView imageViewSplashImage = findViewById(R.id.splashImage);
-        imageViewSplashImage.startAnimation(animation);
-        animation.setAnimationListener(this);
+        imageViewSplashImage.startAnimation(bottomAnimation);
+        bottomAnimation.setAnimationListener(this);
     }
 
     @Override

@@ -17,7 +17,7 @@ public class ControladorDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Creación de tablas (USUARIOS)
         db.execSQL("CREATE TABLE USUARIOS (NOMBRE TEXT PRIMARY KEY, PASS TEXT NOT NULL);");
-        // Creación de tablas (TAREAS)
+        // Creación de tablas (TAREAS) con NOMBRE de la tabla USUARIOS como FOREIGN KEY
         db.execSQL("CREATE TABLE TAREAS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT NOT NULL, USUARIO TEXT, FOREIGN KEY (USUARIO) REFERENCES USUARIOS(NOMBRE));");
     }
 
@@ -26,7 +26,7 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     }
 
-    // Inserción registros
+    // Inserción de registros añadiendo los campos NOMBRE y USUARIO
     public void addTarea(String tarea, String usuario) {
 
         ContentValues registro = new ContentValues();
@@ -36,10 +36,8 @@ public class ControladorDB extends SQLiteOpenHelper {
         // Abrir la bd
         SQLiteDatabase db = this.getWritableDatabase();
 
-        // Insercción de registro
+        // Insercción del registro
         db.insert("TAREAS", null, registro);
-        /*Alternativa a lo anterior:
-            db.execSQL("INSERT INTO TAREAS VALUES (null, '+ tarea +');");*/
 
         // Cerrar la bd
         db.close();
@@ -89,7 +87,7 @@ public class ControladorDB extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Método para controlar el acceso a la aplicación
+    // Método para controlar el acceso a la aplicación con usuario / contraseña
     public boolean loginUsuario(String usuario, String password) {
 
         if (this.validarUsuario(usuario)) {
@@ -112,10 +110,10 @@ public class ControladorDB extends SQLiteOpenHelper {
         }
     }
 
-    // Método que crea un usuario con su contraseña
+    // Creación de un usuario con su contraseña
     public boolean crearUsuario(String usuario, String password) {
 
-        // Si no existe el usuario en la base de datos creamos usuario y contraseña
+        // Validación de la existencia previa del usuario en la base de datos antes de su creación
         if (!this.validarUsuario(usuario)) {
 
             ContentValues registro = new ContentValues();
@@ -138,7 +136,7 @@ public class ControladorDB extends SQLiteOpenHelper {
         }
     }
 
-    // Método que comprueba si existe un usuario en la base de datos
+    // Validación de la existencia de un usuario en la base de datos
     public boolean validarUsuario(String usuario) {
 
         // Abrir la bd
@@ -155,5 +153,23 @@ public class ControladorDB extends SQLiteOpenHelper {
             db.close();
             return false;
         }
+    }
+
+    // Modificación de registros
+    public void updateTarea(String tarea, String usuario, String oldTarea) {
+
+        ContentValues registro = new ContentValues();
+        registro.put("NOMBRE", tarea);
+        registro.put("USUARIO", usuario);
+
+        // Abrir la bd
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Actualización del registro
+        String[] args = new String[]{usuario, oldTarea};
+        db.update("TAREAS", registro, "USUARIO=? AND NOMBRE=?", args);
+
+        // Cerrar la bd
+        db.close();
     }
 }

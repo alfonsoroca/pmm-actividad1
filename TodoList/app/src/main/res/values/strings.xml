@@ -2,5 +2,8 @@
     <string name="app_name">TodoList</string>
     <string name="mis_tareas">Mis Tareas</string>
     <string name="app">App</string>
-    <string name="done">Done</string>
+    <string name="login">Login</string>
+    <string name="crear_usuario">Crear usuario</string>
+    <string name="password">Password</string>
+    <string name="usuario">Usuario</string>
 </resources>
