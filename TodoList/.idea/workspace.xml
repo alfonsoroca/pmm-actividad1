@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c632ecc3-c4cb-4f90-b929-93cd7be1311a" name="Default Changelist" comment="Añadidas tablas a la base de datos" />
+    <list default="true" id="c632ecc3-c4cb-4f90-b929-93cd7be1311a" name="Default Changelist" comment="Añadidas tablas a la base de datos">
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

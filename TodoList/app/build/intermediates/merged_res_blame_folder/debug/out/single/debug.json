@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_update_task.png.flat",
-        "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/drawable-xhdpi/ic_update_task.png"
-    },
-    {
         "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_to_do_list_round.xml.flat",
         "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/mipmap-anydpi-v26/ic_launcher_to_do_list_round.xml"
+    },
+    {
+        "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_update_task.png.flat",
+        "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/drawable-xhdpi/ic_update_task.png"
     },
     {
         "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_ic_user_login.png.flat",
@@ -40,12 +40,12 @@
         "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/font/roboto_black.ttf"
     },
     {
-        "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/menu_main_menu.xml.flat",
-        "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/menu/main_menu.xml"
-    },
-    {
         "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/font_roboto_medium.ttf.flat",
         "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/font/roboto_medium.ttf"
+    },
+    {
+        "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/menu_main_menu.xml.flat",
+        "source": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/src/main/res/menu/main_menu.xml"
     },
     {
         "merged": "/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
