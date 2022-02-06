@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/jalfonso/Git_repos/DAM-EDIX/PMM/TodoList/app"
+    name=":app"
+    type="APP"
+    maven="TodoList:app:"
+    gradle="7.1.0"
+    buildFolder="build"
+    bootClassPath="/home/jalfonso/Android/Sdk/platforms/android-32/android.jar:/home/jalfonso/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-32"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
